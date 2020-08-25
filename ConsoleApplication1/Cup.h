@@ -16,6 +16,8 @@ public:
 	Cup(int numberOfDice);
 	~Cup();
 
+	void operator =(Cup& rhs);
+
 	void roll();
 	int total();
 	bool isEqualDieRolls();

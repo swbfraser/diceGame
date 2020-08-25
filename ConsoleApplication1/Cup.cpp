@@ -12,6 +12,17 @@ Cup::~Cup() {
 	delete[] dice;
 }
 
+void Cup::operator=(Cup& rhs)
+{
+	delete[] dice;
+	dice = new Die[rhs.getNumberOfDice()];
+
+	for (size_t i = 0; i < rhs.getNumberOfDice(); i++)
+	{
+		dice[i] = rhs.dice[i];
+	}
+}
+
 void Cup::roll()
 {
 	

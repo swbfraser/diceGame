@@ -2,10 +2,9 @@
 class Die
 {
 private:
-	const int numberOfFaces;
+	static const int numberOfFaces = 6;
 	int faceValue;
 public:
-	Die();
 	void roll();
 	int getFaceValue();
 	void setFaceValue(int faceValue);
