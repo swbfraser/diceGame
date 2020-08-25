@@ -5,7 +5,7 @@ class Cup
 {
 private:
 
-	int numberOfDice;
+	size_t numberOfDice;
 	Die* dice;
 
 	size_t getNumberOfDice();

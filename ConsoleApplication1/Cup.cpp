@@ -2,7 +2,7 @@
 
 Cup::Cup() :Cup(2) {};
 
-Cup::Cup(int numberOfDice)
+Cup::Cup(size_t numberOfDice)
 {
 	this->numberOfDice = numberOfDice;
 	dice = new Die[numberOfDice];
@@ -19,7 +19,7 @@ void Cup::operator=(Cup& rhs)
 	dice = new Die[rhs.getNumberOfDice()];
 	numberOfDice = rhs.getNumberOfDice();
 
-	for (int i = 0; i < rhs.getNumberOfDice(); i++)
+	for (size_t i = 0; i < rhs.getNumberOfDice(); i++)
 	{
 		dice[i] = rhs.dice[i];
 	}
