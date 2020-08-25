@@ -13,7 +13,7 @@ private:
 public:
 
 	Cup();
-	Cup(int numberOfDice);
+	Cup(size_t numberOfDice);
 	~Cup();
 
 	void operator =(Cup& rhs);
