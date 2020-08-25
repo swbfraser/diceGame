@@ -10,6 +10,13 @@ void DiceGame::play()
 	bool winner = false;
 	int tries = 0;
 
+
+	Cup cup1(3);
+	Cup cup2(2);
+
+
+	cup2 = cup1;
+
 	while (!winner && tries < maxTries) {
 		tries++;
 
