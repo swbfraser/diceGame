@@ -17,6 +17,14 @@ int main()
 {
     srand((unsigned)time(0));
 
+    Cup cup1(3);
+    Cup cup2(2);
+    Cup cup3(cup2);
+
+
+    cup3 = cup2 = cup1;
+
+
 
     DiceGame game;
     game.play();

@@ -8,15 +8,17 @@ private:
 	size_t numberOfDice;
 	Die* dice;
 
-	size_t getNumberOfDice();
+	size_t getNumberOfDice() const;
 
 public:
 
 	Cup();
 	Cup(size_t numberOfDice);
 	~Cup();
+	Cup(const Cup& rhs);
 
-	void operator =(Cup& rhs);
+	Cup& operator =(const Cup& rhs);
+
 
 	void roll();
 	int total();
@@ -24,7 +26,7 @@ public:
 };
 
 
-inline size_t Cup::getNumberOfDice()
+inline size_t Cup::getNumberOfDice() const
 {
 	return numberOfDice;
 }

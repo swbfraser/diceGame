@@ -8,12 +8,26 @@ Cup::Cup(size_t numberOfDice)
 	dice = new Die[numberOfDice];
 }
 
+Cup::Cup(const Cup& rhs)
+{
+	dice = new Die[rhs.getNumberOfDice()];
+	numberOfDice = rhs.getNumberOfDice();
+
+	for (size_t i = 0; i < rhs.getNumberOfDice(); i++)
+	{
+		dice[i] = rhs.dice[i];
+	}
+
+}
+
 Cup::~Cup() {
 	delete[] dice;
 }
 
-void Cup::operator=(Cup& rhs)
+Cup& Cup::operator=(const Cup& rhs)
 {
+
+	if (this == &rhs) return *this;
 
 	delete[] dice;
 	dice = new Die[rhs.getNumberOfDice()];
@@ -23,6 +37,8 @@ void Cup::operator=(Cup& rhs)
 	{
 		dice[i] = rhs.dice[i];
 	}
+
+	return *this;
 }
 
 void Cup::roll()
