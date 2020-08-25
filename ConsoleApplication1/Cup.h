@@ -4,13 +4,26 @@
 class Cup
 {
 private:
-	Die die1;
-	Die die2;
+
+	int numberOfDice;
+	Die* dice;
+
+	size_t getNumberOfDice();
 
 public:
 
+	Cup();
+	Cup(int numberOfDice);
+	~Cup();
+
 	void roll();
 	int total();
-	int isEqualDieRolls();
+	bool isEqualDieRolls();
 };
+
+
+inline size_t Cup::getNumberOfDice()
+{
+	return numberOfDice;
+}
 

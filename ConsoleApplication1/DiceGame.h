@@ -4,7 +4,7 @@
 class DiceGame
 {
 private:
-	const int maxTries = 3;
+	const int maxTries = 4;
 
 	Cup cup;
 	bool gameResult = false;

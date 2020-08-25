@@ -1,21 +1,47 @@
 #include "Cup.h"
 
+Cup::Cup() :Cup(2) {};
 
+Cup::Cup(int numberOfDice)
+{
+	this->numberOfDice = numberOfDice;
+	dice = new Die[numberOfDice];
+}
 
+Cup::~Cup() {
+	delete dice;
+}
 
 void Cup::roll()
 {
-	die1.roll();
-	die2.roll();
+	
+	for (size_t i = 0; i < getNumberOfDice(); i++)
+	{
+		dice[i].roll();
+	}
+
 }
 
 
 int Cup::total()
 {
-	return die1.getFaceValue() + die2.getFaceValue();
+	int result = 0;
+	for (size_t i = 0; i < getNumberOfDice(); i++)
+	{
+		result+=dice[i].getFaceValue();
+	}
+	return result;
 }
 
-int Cup::isEqualDieRolls()
+bool Cup::isEqualDieRolls()
 {
-	return die1.getFaceValue() == die2.getFaceValue();
+	bool result = true;
+	int faceValue = dice[0].getFaceValue();
+
+	for (size_t i = 1; i < getNumberOfDice(); i++)
+	{
+		result = result && (faceValue == dice[i].getFaceValue());
+	}
+	return result;
+
 }
