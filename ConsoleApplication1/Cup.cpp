@@ -14,10 +14,12 @@ Cup::~Cup() {
 
 void Cup::operator=(Cup& rhs)
 {
+
 	delete[] dice;
 	dice = new Die[rhs.getNumberOfDice()];
+	numberOfDice = rhs.getNumberOfDice();
 
-	for (size_t i = 0; i < rhs.getNumberOfDice(); i++)
+	for (int i = 0; i < rhs.getNumberOfDice(); i++)
 	{
 		dice[i] = rhs.dice[i];
 	}
