@@ -9,7 +9,7 @@ Cup::Cup(int numberOfDice)
 }
 
 Cup::~Cup() {
-	delete dice;
+	delete[] dice;
 }
 
 void Cup::roll()
